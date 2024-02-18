@@ -1,16 +1,26 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const Product = require('../models/product.model');
+const express = require("express");
+const mongoose = require("mongoose");
+const Product = require("../models/product.model.js");
+const {
+  getProductsController,
+  getSingleProductController,
+  createSingleProductController,
+  updateSingleProductController,
+  deleteSingleProductController,
+} = require("../controllers/product.controller.js");
+
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get("/", getProductsController);
 
-    // Below is a Controller 'function'
-    try {
-        const products = await Product.find({});
-        res.status(200).json(products);
+router.get("/:id", getSingleProductController);
 
-    } catch (error) {
-        res.status(500).json({ message: error.message} );
-    }
-})
+router.post("/", createSingleProductController);
+
+// update a product
+router.put("/:id", updateSingleProductController);
+
+// delete a product
+router.delete("/:id", deleteSingleProductController);
+
+module.exports = router;
