@@ -1,1 +1,1 @@
-** ## Simple Node API Example **
+Simple Node API Example 
