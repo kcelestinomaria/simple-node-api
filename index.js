@@ -11,6 +11,9 @@ app.use(express.json());
 // add support for entering form data
 //app.use(express.urlencoded({ extended: false }));
 
+// routes
+app.use("/api/products", productRoute)
+
 app.get('/', (req, res) => {
     res.send("Hello from Node API, Yeah We Made It!")
 });
@@ -32,7 +35,7 @@ app.post('/api/products', async (req, res) => {
 });
 
 // Update a product
-app.put('/api/product/:id', async (req, res) => {
+app.put('/api/products/:id', async (req, res) => {
     try {
 
         const { id } = req.params;
@@ -54,7 +57,7 @@ app.put('/api/product/:id', async (req, res) => {
 });
 
 // deleting a product
-app.delete('/api/product/:id', async (req, res) => {
+app.delete('/api/products/:id', async (req, res) => {
     try {
 
         const { id, name } = req.params;
@@ -85,7 +88,7 @@ app.get('/api/products', async (req, res) => {
     }
 });
 
-app.get('/api/product/:id', async (req, res) => {
+app.get('/api/products/:id', async (req, res) => {
     try{
         const { id } = req.params;
         const product = await Product.findById(id);
