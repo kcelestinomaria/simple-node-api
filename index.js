@@ -8,8 +8,11 @@ const app = express()
 // set up middleware to employ json
 app.use(express.json());
 
+// add support for entering form data
+//app.use(express.urlencoded({ extended: false }));
+
 app.get('/', (req, res) => {
-    res.send("Hello from Node API Yeah!")
+    res.send("Hello from Node API, Yeah We Made It!")
 });
 
 
@@ -19,7 +22,11 @@ app.post('/api/products', async (req, res) => {
         const product = await Product.create(req.body);
         //const products = await Product.find({});
         res.status(200).json(product);
+
+        // let's test with forms 
+        //res.status(200).urlencoded(product);
     } catch(error) {
+        //res.status(200).urlencoded({message: error.message})
         res.status(500).json({message: error.message});
     }
 });
