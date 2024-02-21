@@ -7,7 +7,7 @@ const {
   createSingleDiagnosisController,
   updateSingleDiagnosisController,
   deleteSingleDiagnosisController,
-} = require("../controllers/Diagnosis.controller.js");
+} = require("../controllers/diagnosis.controller.js");
 
 const router = express.Router();
 
