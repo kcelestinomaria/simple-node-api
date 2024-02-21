@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const morgan = require("morgan"); // logging library
 
 //const Patient = require("./models/patient.model.js");
 
@@ -19,6 +20,8 @@ app.use(express.json());
 
 // add support for entering form data
 //app.use(express.urlencoded({ extended: false }));
+
+app.use(morgan('dev')); // log data on CLI if API isn't or is successful
 
 // routes
 app.use("/api/Patients", PatientRoute);
