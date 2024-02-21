@@ -13,14 +13,14 @@ const router = express.Router();
 
 router.get("/", getPatientsController);
 
-router.get("/:id", getSinglePatientController);
+router.get("/:patientId", getSinglePatientController); // previously, only `:id`
 
 router.post("/", createSinglePatientController);
 
 // update a Patient
-router.put("/:id", updateSinglePatientController);
+router.put("/:patientId", updateSinglePatientController);
 
 // delete a Patient
-router.delete("/:id", deleteSinglePatientController);
+router.delete("/:patientId", deleteSinglePatientController);
 
 module.exports = router;

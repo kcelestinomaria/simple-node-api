@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const doctorSchema = mongoose.Schema(
     {
         doctorId: {
-            type: String,
+            type: new mongoose.Types.ObjectId(),
             required: true,
         },
 
