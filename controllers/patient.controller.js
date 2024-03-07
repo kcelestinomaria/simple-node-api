@@ -22,7 +22,6 @@ const getSinglePatientController = async (req, res) => {
 const createSinglePatientController = async (req, res) => {
   try {
     const Patient = await Patient.create(req.body);
-
     res.status(200).json(Patient);
   } catch (error) {
     res.status(500).json({ message: error.message });

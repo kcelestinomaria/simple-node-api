@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-//const Patient = require("./models/patient.model.js");
+const Patient = require("./models/patient.model.js");
 
 const PatientRoute = require("./routes/patient.route.js");
 const PrescriptionRoute = require("./routes/prescription.route.js");
