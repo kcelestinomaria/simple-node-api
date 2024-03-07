@@ -1,6 +1,7 @@
 const express = require("express");
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 const Patient = require("../models/patient.model.js");
+const router = express.Router();
 const {
   getPatientsController,
   getSinglePatientController,
@@ -9,13 +10,13 @@ const {
   deleteSinglePatientController,
 } = require("../controllers/patient.controller.js");
 
-const router = express.Router();
 
-router.get("/", getPatientsController);
 
-router.get("/:id", getSinglePatientController);
+router.get("/Patients", getPatientsController);
 
-router.post("/", createSinglePatientController);
+router.get("/Patients/:id", getSinglePatientController);
+
+router.post("/Patients/", createSinglePatientController);
 
 // update a Patient
 router.put("/:id", updateSinglePatientController);
