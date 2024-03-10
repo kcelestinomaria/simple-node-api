@@ -32,16 +32,16 @@ const updateSinglePatientController = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const Patient = await Patient.findByIdAndUpdate(id, req.body);
+    const Patients = await Patient.findByIdAndUpdate(id, req.body);
 
     // suppose if Patient doesn't exist
-    if (!Patient) {
+    if (!Patients) {
       return res.status(404).json({ message: "Patient Not Found" });
     }
 
-    const updatedPatient = await Patient.findById(id);
+    //const Patients = await Patient.findById(id);
 
-    res.status(200).json(updatedPatient);
+    res.status(200).json(Patients);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -51,9 +51,9 @@ const deleteSinglePatientController = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const Patient = await Patient.findByIdAndDelete(id);
+    const Patients = await Patient.findByIdAndDelete(id);
 
-    if (!Patient) {
+    if (!Patients) {
       return res.status(404).json({ message: "Patient Not Found" });
     }
 
