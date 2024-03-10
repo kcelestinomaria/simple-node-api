@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var doctorSchema = mongoose.Schema(
+const doctorSchema = mongoose.Schema(
     {
         doctorId: {
             type: String,
@@ -44,6 +44,6 @@ var doctorSchema = mongoose.Schema(
 )
 
 
-var doctor = mongoose.model("doctor", doctorSchema);
+const Doctor = mongoose.model("Doctor", doctorSchema);
 
-module.exports = doctor;
+module.exports = Doctor;

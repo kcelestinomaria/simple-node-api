@@ -1,6 +1,6 @@
 const express = require("express");
 //const mongoose = require("mongoose");
-const Patient = require("../models/patient.model.js");
+//const Patient = require("../models/patient.model.js");
 const router = express.Router();
 const {
   getPatientsController,
@@ -10,18 +10,31 @@ const {
   deleteSinglePatientController,
 } = require("../controllers/patient.controller.js");
 
+router.route('/Patients')
+    .post(createSinglePatientController);
 
+router.route('/Patients/:id')
+    .get(getSinglePatientController);
 
-router.get("/Patients", getPatientsController);
+router.route('/Patients')
+    .get(getPatientsController);
 
-router.get("/Patients/:id", getSinglePatientController);
+router.route('/:id')
+    .put(updateSinglePatientController);
 
-router.post("/Patients/", createSinglePatientController);
+router.route('/:id')
+    .delete(deleteSinglePatientController);
+
+//router.get("/Patients", getPatientsController);
+
+//router.get("/Patients/:id", getSinglePatientController);
+
+//router.post("/Patients", createSinglePatientController);
 
 // update a Patient
-router.put("/:id", updateSinglePatientController);
+//router.put("/:id", updateSinglePatientController);
 
 // delete a Patient
-router.delete("/:id", deleteSinglePatientController);
+//router.delete("/:id", deleteSinglePatientController);
 
 module.exports = router;

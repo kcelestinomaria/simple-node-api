@@ -29,6 +29,6 @@ const diagnosisSchema = mongoose.Schema(
 )
 
 
-const diagnosis = mongoose.model("diagnosis", diagnosisSchema);
+const Diagnosis = mongoose.model("Diagnosis", diagnosisSchema);
 
-module.exports = diagnosis;
+module.exports = Diagnosis;
