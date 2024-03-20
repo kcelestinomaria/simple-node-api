@@ -11,16 +11,16 @@ const {
 
 const router = express.Router();
 
-router.get("/", getPrescriptionsController);
+router.get("/Prescriptions", getPrescriptionsController);
 
-router.get("/:id", getSinglePrescriptionController);
+router.get("/Prescriptions/:id", getSinglePrescriptionController);
 
-router.post("/", createSinglePrescriptionController);
+router.post("/Prescriptions", createSinglePrescriptionController);
 
 // update a Prescription
-router.put("/:id", updateSinglePrescriptionController);
+router.put("/Prescriptions/:id", updateSinglePrescriptionController);
 
 // delete a Prescription
-router.delete("/:id", deleteSinglePrescriptionController);
+router.delete("/Prescriptions/:id", deleteSinglePrescriptionController);
 
 module.exports = router;
