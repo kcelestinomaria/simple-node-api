@@ -1,0 +1,325 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Tunzisha Exchange API
+  license:
+    name: MIT
+servers:
+  - url: http://tunzishaXchange.swagger.io/v1
+paths:
+  /Patients:
+    post:
+      summary: Add Patient(s) Data to the Exchange
+      description: Add a New Patient to the Exchange
+      requestBody:
+        description: Create New Patient Data in the Exchange
+        content:
+          application/json:
+            schema:
+              schemas:
+                Patient:
+                  properties:
+                    patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                  type: object
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                schemas:
+                  Patient:
+                    properties:
+                     patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                    type: object
+        '405':
+          description: Invalid input
+    get:
+      responses:
+      summary: Get Patient(s) Data from the Exchange
+      description: Get a New Patient from the Exchange
+      requestBody:
+        description: Get Old Patient Data from the Exchange
+        content:
+          application/json:
+            schema:
+              schemas:
+                Patient:
+                  properties:
+                    patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                  type: object
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                schemas:
+                  Patient:
+                    properties:
+                     patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                    type: object
+        '405':
+          description: Invalid input
+      
+  /Patients/{patientId}:
+    update:
+     responses:
+      summary: Update Patient(s) Data from the Exchange
+      description: Update a Patient's Data from the Exchange
+      requestBody:
+        description: Update a Patient's Data from the Exchange
+        content:
+          application/json:
+            schema:
+              schemas:
+                Patient:
+                  properties:
+                    patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                  type: object
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                schemas:
+                  Patient:
+                    properties:
+                     patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                    type: object
+        '405':
+          description: Invalid input
+    delete:
+    responses:
+      summary: Update Patient(s) Data from the Exchange
+      description: Update a Patient's Data from the Exchange
+      requestBody:
+        description: Update a Patient's Data from the Exchange
+        content:
+          application/json:
+            schema:
+              schemas:
+                Patient:
+                  properties:
+                    patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                  type: object
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                schemas:
+                  Patient:
+                    properties:
+                     patientId:
+                      type: integer
+                      format: int64
+                    firstName:
+                      type: string
+                    secondName:
+                      type: string
+                    age:
+                      type: integer
+                    gender:
+                      type: string
+                    profileImage:
+                      type: string
+                    contactNumber:
+                      type: string
+                    nextOfKin:
+                      type: string
+                    dateOfBirth:
+                      type: string
+                    inpatient:
+                      type: boolean
+                    symptoms:
+                      type: string
+                    diagnosis:
+                      type: string
+                    prescription:
+                      type: string
+                    type: object
+        '405':
+          description: Invalid input
+      
