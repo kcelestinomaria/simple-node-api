@@ -11,16 +11,16 @@ const {
 
 const router = express.Router();
 
-router.get("/", getHospitalsController);
+router.get("/Hospitals", getHospitalsController);
 
-router.get("/:id", getSingleHospitalController);
+router.get("/Hospitals/:id", getSingleHospitalController);
 
-router.post("/", createSingleHospitalController);
+router.post("/Hospitals", createSingleHospitalController);
 
 // update a Hospital
-router.put("/:id", updateSingleHospitalController);
+router.put("/Hospitals/:id", updateSingleHospitalController);
 
 // delete a Hospital
-router.delete("/:id", deleteSingleHospitalController);
+router.delete("Hospitals/:id", deleteSingleHospitalController);
 
 module.exports = router;
