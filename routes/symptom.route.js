@@ -11,16 +11,16 @@ const {
 
 const router = express.Router();
 
-router.get("/", getSymptomsController);
+router.get("/Symptoms", getSymptomsController);
 
-router.get("/:id", getSingleSymptomController);
+router.get("/Symptoms/:id", getSingleSymptomController);
 
-router.post("/", createSingleSymptomController);
+router.post("/Symptoms", createSingleSymptomController);
 
 // update a Symptom
-router.put("/:id", updateSingleSymptomController);
+router.put("/Symptoms/:id", updateSingleSymptomController);
 
 // delete a Symptom
-router.delete("/:id", deleteSingleSymptomController);
+router.delete("/Symptoms/:id", deleteSingleSymptomController);
 
 module.exports = router;
