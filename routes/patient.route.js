@@ -19,10 +19,10 @@ router.route('/Patients/:id')
 router.route('/Patients')
     .get(getPatientsController);
 
-router.route('/:id')
+router.route('/Patients/:id')
     .put(updateSinglePatientController);
 
-router.route('/:id')
+router.route('/Patients/:id')
     .delete(deleteSinglePatientController);
 
 //router.get("/Patients", getPatientsController);

@@ -33,7 +33,7 @@ app.use("/api", DiagnosisRoute);
 
 
 app.get("/", (req, res) => {
-  res.send("Hello there, Welcome to the Tunzisha Xchange API! Route to '/api/[entityname]' to read or write to a specific endpoint");
+  res.send("Hello there, Welcome to the Tunzisha Xchange API!");
 });
 
 mongoose
