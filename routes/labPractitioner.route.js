@@ -11,16 +11,16 @@ const {
 
 const router = express.Router();
 
-router.get("/", getlabPractitionersController);
+router.get("/labPractitioners", getlabPractitionersController);
 
-router.get("/:id", getSinglelabPractitionerController);
+router.get("/labPractitioners/:id", getSinglelabPractitionerController);
 
-router.post("/", createSinglelabPractitionerController);
+router.post("/labPractitioners", createSinglelabPractitionerController);
 
 // update a labPractitioner
-router.put("/:id", updateSinglelabPractitionerController);
+router.put("labPractitioners/:id", updateSinglelabPractitionerController);
 
 // delete a labPractitioner
-router.delete("/:id", deleteSinglelabPractitionerController);
+router.delete("labPractitioners/:id", deleteSinglelabPractitionerController);
 
 module.exports = router;
