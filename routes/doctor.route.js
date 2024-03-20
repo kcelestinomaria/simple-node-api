@@ -11,16 +11,16 @@ const {
 
 const router = express.Router();
 
-router.get("/", getDoctorsController);
+router.get("/Doctors", getDoctorsController);
 
-router.get("/:id", getSingleDoctorController);
+router.get("/Doctors/:id", getSingleDoctorController);
 
-router.post("/", createSingleDoctorController);
+router.post("/Doctors", createSingleDoctorController);
 
 // update a Doctor
-router.put("/:id", updateSingleDoctorController);
+router.put("/Doctors/:id", updateSingleDoctorController);
 
 // delete a Doctor
-router.delete("/:id", deleteSingleDoctorController);
+router.delete("/Doctors/:id", deleteSingleDoctorController);
 
 module.exports = router;
