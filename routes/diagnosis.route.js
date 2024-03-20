@@ -11,16 +11,16 @@ const {
 
 const router = express.Router();
 
-router.get("/", getDiagnosesController);
+router.get("/Diagnoses", getDiagnosesController);
 
-router.get("/:id", getSingleDiagnosisController);
+router.get("/Diagnoses/:id", getSingleDiagnosisController);
 
-router.post("/", createSingleDiagnosisController);
+router.post("/Diagnoses", createSingleDiagnosisController);
 
 // update a Diagnosis
-router.put("/:id", updateSingleDiagnosisController);
+router.put("/Diagnoses/:id", updateSingleDiagnosisController);
 
 // delete a Diagnosis
-router.delete("/:id", deleteSingleDiagnosisController);
+router.delete("/Diagnoses/:id", deleteSingleDiagnosisController);
 
 module.exports = router;
