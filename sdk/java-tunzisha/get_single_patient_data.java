@@ -7,7 +7,7 @@ public class get_single_patient_data {
         MediaType mediaType = MediaType.parse("text/plain");
         RequestBody body = RequestBody.create(mediaType, "");
         Request request = new Request.Builder()
-                .url("https://3000-kcelestinom-tunzishaxch-gy1ysd1zmzc.ws-eu108.gitpod.io/api/Patients/65ee32e5390498ef1815c685")
+                .url("https://localhost:3000/api/Patients/65ee32e5390498ef1815c685")
                 .method("GET", body)
                 .build();
         Response response = client.newCall(request).execute();

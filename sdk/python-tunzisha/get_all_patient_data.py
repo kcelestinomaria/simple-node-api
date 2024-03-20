@@ -1,6 +1,6 @@
 import requests
 
-url = "https://3000-kcelestinom-tunzishaxch-gy1ysd1zmzc.ws-eu108.gitpod.io/api/Patients"
+url = "https://localhost:3000/api/Patients"
 
 payload = ""
 headers = {}

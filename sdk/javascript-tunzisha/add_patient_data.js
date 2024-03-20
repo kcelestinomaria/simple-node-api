@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var options = {
   'method': 'POST',
-  'hostname': '3000-kcelestinom-tunzishaxch-gy1ysd1zmzc.ws-eu108.gitpod.io',
+  'hostname': 'localhost:3000/api/Patients',
   'path': '/api/Patients',
   'headers': {
     'Content-Type': 'application/json'
