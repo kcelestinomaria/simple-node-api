@@ -1,4 +1,4 @@
-#### Tunzisha Xchange REST API ####
+### Tunzisha Xchange REST API
 
 Tunzisha Exchange API
 
