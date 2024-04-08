@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const apiKeyController = require('../controllers/apiKeyController');
+const apiKeyController = require('../../controllers/apiKeyController');
 
 // Route to create a new API key
 router.post('/api-keys', async (req, res) => {

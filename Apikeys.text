@@ -1,0 +1,11 @@
+{
+    "hospitalId": "Pumwani Maternity Hospital"
+}
+
+Returns:
+{
+    "apiKey": "983012cd-6dd0-4dfb-a81e-264f4e0f43d0"
+}
+
+
+JWT_SECRET='ebc3fdfcaacc7abee574cfef2a0f50cdd5c843c90f448422433dc497c9d4760e'

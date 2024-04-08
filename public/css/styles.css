@@ -1,44 +1,44 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
 }
+
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h1, h2 {
-    text-align: center;
+    color: #333;
 }
-label {
-    display: block;
-    margin-bottom: 5px;
+
+#loginSection, #adminSection {
+    margin-top: 20px;
 }
-input[type="text"], input[type="password"], button {
-    width: 100%;
-    padding: 10px;
+
+form {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
 }
+
 button {
-    background-color: #007bff;
-    color: #fff;
     cursor: pointer;
 }
-button:hover {
-    background-color: #0056b3;
+
+#loggedInUser {
+    font-weight: bold;
+    color: #007bff;
 }
-.result {
+
+#allPatients {
     margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+}
+
+#patientsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#patientsList li {
+    margin-bottom: 5px;
+    cursor: pointer;
 }

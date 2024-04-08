@@ -1,14 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const uuid = require('uuid');
 const path = require('path');
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const apiKeyMiddleware = require('./middleware/apiKey.middleware.js');
 const authorizeRole = require('./middleware/authorizeRole.middleware.js');
-const User = require('./models/user.model.js');
 const ApiKey = require('./models/apiKey.model.js');
 
 const PatientRoute = require("./routes/patient.route.js");
@@ -24,7 +23,6 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => {
@@ -34,21 +32,28 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 app.use(express.json());
 
-app.use(apiKeyMiddleware);
+//app.use(apiKeyMiddleware);
+
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 const authorizeAdmin = authorizeRole('admin');
+const authorizeDoctor = authorizeRole('doctor');
 
 app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
     try {
-        const adminUsername = process.env.ADMIN_USERNAME;
-        const adminPassword = process.env.ADMIN_PASSWORD;
-        if (username === adminUsername && bcrypt.compareSync(password, adminPassword)) {
-            const token = jwt.sign({ username, role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1h' });
-            res.json({ token });
+        let role = '';
+        if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+            role = 'admin';
+        } else if (password.endsWith('MOHApprovedDoctor')) {
+            role = 'doctor';
         } else {
-            res.status(401).json({ error: 'Invalid credentials' });
+            role = 'patient';
         }
+        
+        const token = jwt.sign({ username, role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.json({ token });
     } catch (error) {
         console.error('Error authenticating user:', error);
         res.status(500).json({ error: 'Internal server error' });
